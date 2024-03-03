@@ -1,11 +1,10 @@
-from flask import Flask, jsonify
-
+from flask import Flask, jsonify, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return jsonify({"Message": "ACABEI DE SUBIR ESSA APLICAÇÃO USANDO UM CLUSTER DE K8s"})
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
